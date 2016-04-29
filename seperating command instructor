@@ -1,0 +1,31 @@
+/**
+  Incomplete code;
+  Don't use this code;
+  It is used in seperating command instructor;
+**/
+
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        int number = input.nextInt();
+        String[] command = new String[number];
+        for(int i = 0; i < number; i++)
+            command[i] = input.nextLine();
+        char[] shared = new char[command[0].length()];
+                for(int i = 1; i < number; i++){
+                    for(int j = 0; j < command[0].length(); j++){
+                        if(command[0].charAt(j) == command[i].charAt(j) && shared[j] != '?'){
+                            shared[j] = command[0].charAt(j);
+                        }
+                        else{
+                            shared[j] = '?';
+                        }
+            }
+        }
+        for(int i = 0; i < shared.length; i++)
+            System.out.println(shared[i]);
+    }
+}
+
